@@ -14,7 +14,7 @@ namespace WebAPP.Models.Sınıflar
         public string Mail { get; set; }
         public string Yorum { get; set; }
         public Blog blog { get; set; }
-        public string  Yoruma { get; set; }
+
 
 
 

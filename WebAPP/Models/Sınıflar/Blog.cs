@@ -14,6 +14,8 @@ namespace WebAPP.Models.Sınıflar
         public DateTime Time { get; set; }
         public string Aciklama { get; set; }
         public string BlogImage { get; set; }
+        public ICollection<Yorumlar> Yorumlars { get; set; }
+
 
 
     }
