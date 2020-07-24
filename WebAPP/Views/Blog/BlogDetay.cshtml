@@ -1,5 +1,6 @@
-﻿@using WebAPP.Models.Sınıflar;,
-@model List<Blog>
+﻿
+@model  WebAPP.Models.Sınıflar.BlogYorum
+
 
 @{
     ViewBag.Title = "BlogDetay";
@@ -42,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="col-md-8 single-main">
                 <div class="single-grid">
-                    @foreach (var x in Model)
+                    @foreach (var x in Model.Deger1)
                     {
                         <img src="@x.BlogImage" alt="" />
                         <h2>  @x.Baslik </h2>
@@ -51,35 +52,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </p>
                     }
                 </div>
-                <ul class="comment-list">
-                    <li>
-                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>Mustafa Uçarer
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                @foreach (var y in Model.Deger2)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>@y.KullaniciAdi <br /> @y.Yorum </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
 
-                </ul>
-                <ul class="comment-list">
-                    <li>
-                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>Mustafa Uçarer
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                    </ul>
+                }
 
-                </ul>
-                <div class="content-form">
-                    <h3>Yorum Yap</h3>
-                    <form>
-                        <input type="text" placeholder="Kullanıcı Adı" required />
-                        <input type="text" placeholder="Mail" required />
-                        <textarea placeholder="Yorum"></textarea> 
-                        <input type="submit" value="Gönder" />
-                    </form>
-                </div>
+
             </div>
 
             <div class="col-md-4 side-content">
