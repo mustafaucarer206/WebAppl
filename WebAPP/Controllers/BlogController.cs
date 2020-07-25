@@ -11,13 +11,17 @@ namespace WebAPP.Controllers
     {
         // GET: Blog
         Context c = new Context();
+        BlogYorum by = new BlogYorum();
 
         public ActionResult Index()
         {
-            var bloglar = c.Blogs.ToList();
-            return View(bloglar);
+            by.Deger1 = c.Blogs.ToList();
+            by.Deger3 = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+
+            // var bloglar = c.Blogs.ToList();
+            return View(by);
         }
-        BlogYorum by = new BlogYorum();
+       
         public ActionResult BlogDetay(int id)
         {
 

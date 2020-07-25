@@ -1,0 +1,31 @@
+﻿@using WebAPP.Models.Sınıflar
+@model List<Blog>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Partial2</title>
+</head>
+<body>
+    @foreach (var x in Model)
+    {
+      <div class="right">
+        <div class="bot-left">
+            <img src="@x.BlogImage" alt="" />
+        </div>
+        <div class="left-text">
+
+            <h4>@x.Baslik</h4>
+            <span class="doller">@x.Tarih</span>
+            <p>Açıklama Gelecek</p>
+            <p><a href="/Blog/Blogdetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+        </div>
+         </div>
+    }
+</body>
+</html>
